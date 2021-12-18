@@ -80,3 +80,15 @@ Log them to the console using string interpolation
 ## Further Exploration
 
 Modify the program so that it asks the user for the input type (meters or feet). Compute for the area accordingly, and log it and its conversion in parentheses.
+
+## Understanding
+
+- Need a variable to hold the type of data meters or feet
+- Conditional checks the type variable and operates accordingly
+- If we get meters, compute as meters then multiply result by 10.7639 to get square footage
+- If we get feet, compute as feet then divide result by 10.7639 to get square meters
+
+## Data Structure
+
+A variable inputType holds "meters" or "feet"
+User gets question that asks them to choose 1 for meters, 2 for feet
