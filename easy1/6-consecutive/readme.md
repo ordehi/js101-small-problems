@@ -85,3 +85,12 @@ at each iteration, add counter to accumulator if operation is sum, multiply it i
 - else break
 
 5. Return the value of accumulator
+
+## Further Exploration
+
+What if the input was an array of integers instead of just a single integer? How would your computeSum and computeProduct functions change? Given that the input is an array, how might you make use of the `Array.prototype.reduce()` method?
+
+### Restate the problem
+
+If the input is an array of integers, the functions can compute the sum or product of all integers in the array.
+To use `Array.prototype.reduce()` we pass the input array to it and at each iteration add the current integer to the accumulator, having the accumulator start at 0 for sum and 1 for product.
