@@ -10,11 +10,35 @@ You may not use any of the standard conversion methods available in JavaScript, 
 
 Examples
 
-```
-console.log(stringToInteger("4321") === 4321); // logs true
-console.log(stringToInteger("570") === 570); // logs true
+```javascript
+console.log(stringToInteger('4321') === 4321); // logs true
+console.log(stringToInteger('570') === 570); // logs true
 ```
 
 ## Mental Model
 
 Return an integer by calculating the value of each character in a given string
+
+## Research
+
+JavaScript type coercion for String to Number:
+
+> When an operation like subtraction (-), multiplication (\*), division (/) or modulus (%) is performed, all the values that are not number are converted into the number data type, as these operations can be performed between numbers only. Some examples of this are shown below.
+
+This means that string \* 1, where string contains only number characters, will return a number type value of string.
+
+## Data Structure
+
+## Algorithm
+
+return inputString \* 1
+
+## Further Exploration
+
+Write a hexadecimalToInteger() function that converts a string representing a hexadecimal number to its integer value. Note that hexadecimal numbers use base 16 instead of 10, and the "digits" A, B, C, D, E, and F (and the lowercase equivalents) correspond to decimal values of 10-15.
+
+Example:
+
+```javascript
+hexadecimalToInteger('4D9f') === 19871;
+```
