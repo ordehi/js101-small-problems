@@ -47,3 +47,46 @@ const logInBox = (message, boxWidth = message.length + 2) => {
 
   console.log(dashLine + '\n' + spaceLine + messageLine + spaceLine + dashLine);
 };
+
+/* refactoring
+
+const logInBox = (message, boxWidth = message.length) => {
+  if (boxWidth < 2) {
+    boxWidth = 2;
+  }
+
+  if (message !== '' && boxWidth < 3) {
+    boxWidth = 3;
+  }
+
+  let messageLine = '';
+  let wrappedMsg = [];
+  if (message.length > 0 && boxWidth < message.length) {
+    let wrapLines = Math.ceil(message.length / boxWidth);
+    let breakpoint = 0;
+    for (let count = 0; count < wrapLines; count += 1) {
+      wrappedMsg.push(message.substring(breakpoint, breakpoint + boxWidth));
+      breakpoint += boxWidth;
+    }
+
+    let last = wrappedMsg[wrappedMsg.length - 1].length;
+    if (wrappedMsg[0] !== '' && last < boxWidth) {
+      wrappedMsg[wrappedMsg.length - 1] += ' '.repeat(boxWidth - last);
+    }
+
+    wrappedMsg.forEach((line) => {
+      messageLine += '| ' + line + ' |\n';
+    });
+  } else {
+    messageLine +=
+      '| ' + message + ' '.repeat(boxWidth - message.length - 1) + '|\n';
+  }
+
+  let dashLine = '+' + '-'.repeat(boxWidth) + '+';
+  let spaceLine = '|' + ' '.repeat(boxWidth) + '|\n';
+
+  let result = dashLine + '\n' + spaceLine + messageLine + spaceLine + dashLine;
+
+  return result;
+};
+ */
