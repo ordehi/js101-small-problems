@@ -16,6 +16,57 @@ PRINT dashLine + spaceLine + messageLine + spaceLine + dashLine
 END
 */
 
+/* const TOP_BOTTOM = '-';
+const CORNER = '+';
+const SIDE = '|';
+
+const wrapToFixedWidthLines = (message, lineWidth) => {
+  let linesToWrap = Math.ceil(message.length / lineWidth);
+  let lineStart = 0;
+  let wrappedMsg = [];
+
+  for (let line = 0; line < linesToWrap; line += 1) {
+    wrappedMsg.push(message.substring(lineStart, lineStart + lineWidth));
+    lineStart += lineWidth;
+  }
+
+  let lastLineLength = wrappedMsg.at(-1).length;
+  if (lastLineLength < lineWidth) {
+    wrappedMsg.at(-1).padEnd(lineWidth - lastLineLength, ' ');
+  }
+
+  return wrappedMsg;
+};
+
+const logInBox = (message, boxWidth = message.length) => {
+  let boxedMsg = [];
+  let msgLength = message.length;
+  let topAndBottomLine = CORNER + TOP_BOTTOM.repeat(boxWidth + 2) + CORNER;
+  let beforeAndAfterMsgLine = SIDE + ' '.repeat(boxWidth + 2) + SIDE;
+
+  boxedMsg.push(topAndBottomLine);
+  boxedMsg.push(beforeAndAfterMsgLine);
+
+  if (boxWidth < msgLength) {
+    boxedMsg.push(
+      wrapToFixedWidthLines(message, boxWidth).map((line) => {
+        SIDE + ' ' + line + ' ' + SIDE;
+      })
+    );
+  } else {
+    let paddedMsg =
+      SIDE + ' ' + message.padEnd(boxWidth - msgLength, ' ') + ' ' + SIDE;
+    boxedMsg.push(paddedMsg);
+  }
+
+  boxedMsg.push(beforeAndAfterMsgLine);
+  boxedMsg.push(topAndBottomLine);
+
+  let strMsg = boxedMsg.join('\n');
+
+  return strMsg;
+}; */
+
 const logInBox = (message, boxWidth = message.length + 2) => {
   let wrappedMsg = [];
   if (boxWidth < message.length + 2) {
@@ -63,15 +114,15 @@ const logInBox = (message, boxWidth = message.length) => {
   let wrappedMsg = [];
   if (message.length > 0 && boxWidth < message.length) {
     let wrapLines = Math.ceil(message.length / boxWidth);
-    let breakpoint = 0;
-    for (let count = 0; count < wrapLines; count += 1) {
-      wrappedMsg.push(message.substring(breakpoint, breakpoint + boxWidth));
-      breakpoint += boxWidth;
+    let lineStart = 0;
+    for (let line = 0; line < wrapLines; line += 1) {
+      wrappedMsg.push(message.substring(lineStart, lineStart + boxWidth));
+      lineStart += boxWidth;
     }
 
-    let last = wrappedMsg[wrappedMsg.length - 1].length;
-    if (wrappedMsg[0] !== '' && last < boxWidth) {
-      wrappedMsg[wrappedMsg.length - 1] += ' '.repeat(boxWidth - last);
+    let lastLineLength = wrappedMsg[wrappedMsg.length - 1].length;
+    if (wrappedMsg[0] !== '' && lastLineLength < boxWidth) {
+      wrappedMsg[wrappedMsg.length - 1] += ' '.repeat(boxWidth - lastLineLength);
     }
 
     wrappedMsg.forEach((line) => {
