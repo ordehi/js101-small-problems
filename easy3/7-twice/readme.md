@@ -42,3 +42,17 @@ Given a number, return that number multiplied by two unless it's a double double
 - check if each part is
 
 ## Algorithm
+
+START
+
+-# Given a number called n
+
+SET str = string of n
+IF length of str is even
+
+- IF str.substring(0, str.length / 2) === str.substring(str.length / 2)
+  - RETURN n
+
+RETURN n \* 2
+
+END
