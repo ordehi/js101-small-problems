@@ -1,0 +1,15 @@
+{
+  "name": "2-searching",
+  "version": "1.0.0",
+  "description": "Write a program that solicits six numbers from the user and logs a message that describes whether the sixth number appears among the first five numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
