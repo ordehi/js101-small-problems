@@ -40,7 +40,7 @@ I will have to use BigInt for this as Number.MAX_SAFE_INTEGER will prevent me fr
 
 - BigInt supports `toString()`
 - I can increase a counter by doing `counter += 1n`
-- I can use the `BigInt()` constructor to turn the length of a string into a BigInt
+- I can use the `BigInt()` constructor to turn the length of a string into a BigInt. Example: `BigInt(13n.toString().length)`
 
 ## Algorithm
 
