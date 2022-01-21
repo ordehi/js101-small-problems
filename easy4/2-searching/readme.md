@@ -46,19 +46,17 @@ Given 6 numbers, print whether the six number is present in the first 5.
 ## Algorithm
 
 ```
-START searchLast(arrayToSearch, numberToMatch)
+START
 
--# Given an array of 5 integers called arrayToSearch, and a number called numberToMatch
+SET arrayOfNumbers = []
 
-IF numberToMatch is present in arrayToSearch
-  - RETURN true
-ELSE
-  - RETURN false
+WHILE length of arrayOfNumbers < 5
+  - GET number
+  - SET arrayOfNumbers.push(number)
+
+GET numberToMatch
+
+PRINT The number {numberToMatch} {arrayOfNumbers.includes(numberToMatch) ? appears : does not appear} in {arrayOfNumbers.join()}.
 
 END
-
-START print
-
-END
-
 ```
